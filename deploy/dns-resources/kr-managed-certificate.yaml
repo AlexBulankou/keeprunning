@@ -1,0 +1,15 @@
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: kr-certificate
+spec:
+  domains:
+    - keeprunning.io
+---
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: kr-www-certificate
+spec:
+  domains:
+    - www.keeprunning.io
