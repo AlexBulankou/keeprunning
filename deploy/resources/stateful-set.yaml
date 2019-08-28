@@ -36,7 +36,7 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: wordpress-volume-2
+        - name: wordpress-volume
           mountPath: /var/www/html
         readinessProbe:
           httpGet:
@@ -73,9 +73,9 @@ spec:
                   "-instances=$(PROJECT_ID):$(CONNECTION_NAME)=tcp:3306"]
   volumeClaimTemplates:
     - metadata:
-        name: wordpress-volume-2
+        name: wordpress-volume
       spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
-            storage: 100Gi
+            storage: 10Gi
