@@ -1,9 +1,0 @@
-apiVersion: sql.cnrm.cloud.google.com/v1alpha3
-kind: SQLUser
-metadata:
-  name: wordpress
-spec:
-  instanceRef:
-    name: wp-db
-  host: "%"
-  password: change-me

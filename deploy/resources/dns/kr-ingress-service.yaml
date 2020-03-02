@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: kr-app
+  namespace: krns
   annotations:
     kubernetes.io/ingress.global-static-ip-name: kr-ip
     networking.gke.io/managed-certificates: kr-certificate,kr-www-certificate
@@ -15,17 +16,3 @@ spec:
   backend:
     serviceName: kr-app-backend
     servicePort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: wordpress
-  name: kr-app-backend
-spec:
-  type: NodePort
-  selector:
-    app: wordpress
-  ports:
-  - port: 80
-    targetPort: 80

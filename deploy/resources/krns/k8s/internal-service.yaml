@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: wordpress
+  name: kr-app-backend
+  namespace: krns
+spec:
+  type: NodePort
+  selector:
+    app: wordpress
+  ports:
+  - port: 80
+    targetPort: 80
